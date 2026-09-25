@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GitLearn | Git & GitHub Guide</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span>◆</span> GitLearn
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Git commands..."
+            >
+        </div>
+
+        <button id="themeBtn" class="theme-btn">
+            🌙
+        </button>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <p class="sidebar-title">GETTING STARTED</p>
+
+        <a href="#home" class="nav-link active">
+            🏠 Introduction
+        </a>
+
+        <a href="#basics" class="nav-link">
+            📚 Git Basics
+        </a>
+
+        <a href="#workflow" class="nav-link">
+            🔄 Git Workflow
+        </a>
+
+
+        <p class="sidebar-title">COMMANDS</p>
+
+        <a href="#commands" class="nav-link">
+            💻 Git Commands
+        </a>
+
+        <a href="#remote" class="nav-link">
+            ☁️ Remote Commands
+        </a>
+
+
+        <p class="sidebar-title">COLLABORATION</p>
+
+        <a href="#branching" class="nav-link">
+            🌿 Branching
+        </a>
+
+        <a href="#pull-request" class="nav-link">
+            🔀 Pull Request
+        </a>
+
+        <a href="#conflict" class="nav-link">
+            ⚠️ Merge Conflict
+        </a>
+
+
+        <p class="sidebar-title">REFERENCE</p>
+
+        <a href="#cheatsheet" class="nav-link">
+            📋 Cheat Sheet
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <!-- HERO -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    GIT & GITHUB GUIDE
+                </div>
+
+                <h1>
+                    Learn Git.
+                    <br>
+                    <span>Build with confidence.</span>
+                </h1>
+
+                <p>
+                    Learn Git and GitHub through practical examples.
+                    Understand repositories, commits, branches,
+                    pull requests, merging and conflict resolution.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#basics" class="primary-btn">
+                        Start Learning →
+                    </a>
+
+                    <a href="#cheatsheet" class="secondary-btn">
+                        Cheat Sheet
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="git-visual">
+
+                <div class="git-logo">
+                    GIT
+                </div>
+
+                <div class="git-line line-one">
+                    ●────────●
+                </div>
+
+                <div class="git-line line-two">
+                    └──────●
+                </div>
+
+                <div class="git-line line-three">
+                    └──────●
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BASICS -->
+
+        <section id="basics" class="section">
+
+            <div class="section-heading">
+
+                <span>01</span>
+
+                <div>
+                    <small>FOUNDATION</small>
+                    <h2>What is Git?</h2>
+                </div>
+
+            </div>
+
+
+            <div class="definition">
+
+                <h3>Definition</h3>
+
+                <p>
+                    Git is a distributed version control system
+                    used to track changes in source code and
+                    help developers collaborate on software projects.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="icon">📦</div>
+
+                    <h3>Version Control</h3>
+
+                    <p>
+                        Track changes made to your project and
+                        restore previous versions when required.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">👥</div>
+
+                    <h3>Collaboration</h3>
+
+                    <p>
+                        Multiple developers can work on the
+                        same project using branches and merges.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">🌿</div>
+
+                    <h3>Branching</h3>
+
+                    <p>
+                        Create separate development environments
+                        for features, fixes and experiments.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WORKFLOW -->
+
+        <section id="workflow" class="section dark-section">
+
+            <div class="section-heading">
+
+                <span>02</span>
+
+                <div>
+                    <small>CORE CONCEPT</small>
+                    <h2>Git Workflow</h2>
+                </div>
+
+            </div>
+
+
+            <div class="workflow">
+
+                <div class="workflow-card">
+
+                    <span>01</span>
+
+                    <h3>Working Directory</h3>
+
+                    <p>
+                        Files you are currently creating
+                        or modifying.
+                    </p>
+
+                </div>
+
+                <div class="arrow">→</div>
+
+
+                <div class="workflow-card">
+
+                    <span>02</span>
+
+                    <h3>Staging Area</h3>
+
+                    <p>
+                        Changes selected using
+                        <code>git add</code>.
+                    </p>
+
+                </div>
+
+                <div class="arrow">→</div>
+
+
+                <div class="workflow-card">
+
+                    <span>03</span>
+
+                    <h3>Local Repository</h3>
+
+                    <p>
+                        Permanent project history
+                        created using commits.
+                    </p>
+
+                </div>
+
+                <div class="arrow">→</div>
+
+
+                <div class="workflow-card">
+
+                    <span>04</span>
+
+                    <h3>Remote Repository</h3>
+
+                    <p>
+                        Repository hosted on GitHub
+                        or another Git service.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMMANDS -->
+
+        <section id="commands" class="section">
+
+            <div class="section-heading">
+
+                <span>03</span>
+
+                <div>
+                    <small>COMMAND LINE</small>
+                    <h2>Essential Git Commands</h2>
+                </div>
+
+            </div>
+
+
+            <div class="command-grid">
+
+
+                <!-- INIT -->
+
+                <div class="command-card">
+
+                    <div class="command-title">
+
+                        <h3>git init</h3>
+
+                        <button onclick="copyCommand('git init')">
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Creates a new Git repository.
+                    </p>
+
+                    <code>git init</code>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="command-card">
+
+                    <div class="command-title">
+
+                        <h3>git status</h3>
+
+                        <button onclick="copyCommand('git status')">
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Shows the current repository status.
+                    </p>
+
+                    <code>git status</code>
+
+                </div>
+
+
+                <!-- ADD -->
+
+                <div class="command-card">
+
+                    <div class="command-title">
+
+                        <h3>git add</h3>
+
+                        <button onclick="copyCommand('git add .')">
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Adds changes to the staging area.
+                    </p>
+
+                    <code>git add .</code>
+
+                </div>
+
+
+                <!-- COMMIT -->
+
+                <div class="command-card">
+
+                    <div class="command-title">
+
+                        <h3>git commit</h3>
+
+                        <button onclick="copyCommand('git commit -m message')">
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Saves staged changes in Git history.
+                    </p>
+
+                    <code>git commit -m "message"</code>
+
+                </div>
+
+
+                <!-- LOG -->
+
+                <div class="command-card">
+
+                    <div class="command-title">
+
+                        <h3>git log</h3>
+
+                        <button onclick="copyCommand('git log --oneline')">
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Displays the commit history.
+                    </p>
+
+                    <code>git log --oneline</code>
+
+                </div>
+
+
+                <!-- DIFF -->
+
+                <div class="command-card">
+
+                    <div class="command-title">
+
+                        <h3>git diff</h3>
+
+                        <button onclick="copyCommand('git diff')">
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Shows changes that are not staged.
+                    </p>
+
+                    <code>git diff</code>
+
+                </div>
+
+
+                <!-- BRANCH -->
+
+                <div class="command-card">
+
+                    <div class="command-title">
+
+                        <h3>git branch</h3>
+
+                        <button onclick="copyCommand('git branch')">
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Lists or manages Git branches.
+                    </p>
+
+                    <code>git branch</code>
+
+                </div>
+
+
+                <!-- SWITCH -->
+
+                <div class="command-card">
+
+                    <div class="command-title">
+
+                        <h3>git switch</h3>
+
+                        <button onclick="copyCommand('git switch main')">
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Switches between branches.
+                    </p>
+
+                    <code>git switch main</code>
+
+                </div>
+
+
+                <!-- MERGE -->
+
+                <div class="command-card">
+
+                    <div class="command-title">
+
+                        <h3>git merge</h3>
+
+                        <button onclick="copyCommand('git merge feature')">
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Combines changes from another branch.
+                    </p>
+
+                    <code>git merge feature</code>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REMOTE -->
+
+        <section id="remote" class="section dark-section">
+
+            <div class="section-heading">
+
+                <span>04</span>
+
+                <div>
+                    <small>GITHUB</small>
+                    <h2>Remote Commands</h2>
+                </div>
+
+            </div>
+
+
+            <div class="terminal">
+
+                <div class="terminal-header">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <div class="terminal-body">
+
+                    <p>
+                        <b>$</b> git remote add origin
+                    </p>
+
+                    <p>
+                        https://github.com/user/project.git
+                    </p>
+
+                    <p>
+                        <b>$</b> git push -u origin main
+                    </p>
+
+                    <p class="success">
+                        ✓ Branch main pushed successfully
+                    </p>
+
+                    <p>
+                        <b>$</b> git pull origin main
+                    </p>
+
+                    <p class="success">
+                        ✓ Already up to date
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="remote-grid">
+
+                <div>
+                    <h3>git clone</h3>
+                    <p>Copy an existing repository.</p>
+                </div>
+
+                <div>
+                    <h3>git push</h3>
+                    <p>Upload commits to GitHub.</p>
+                </div>
+
+                <div>
+                    <h3>git pull</h3>
+                    <p>Download and integrate changes.</p>
+                </div>
+
+                <div>
+                    <h3>git fetch</h3>
+                    <p>Download remote information without merging.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BRANCHING -->
+
+        <section id="branching" class="section">
+
+            <div class="section-heading">
+
+                <span>05</span>
+
+                <div>
+                    <small>DEVELOPMENT</small>
+                    <h2>Git Branching</h2>
+                </div>
+
+            </div>
+
+
+            <p class="description">
+                Branches allow developers to work on features
+                independently without directly modifying the
+                main branch.
+            </p>
+
+
+            <div class="branch-visual">
+
+                <div class="main-branch">
+
+                    <strong>main</strong>
+
+                    <span>●</span>
+                    <span>●</span>
+                    <span>●</span>
+                    <span>●</span>
+
+                </div>
+
+
+                <div class="feature-branch">
+
+                    <strong>feature/login</strong>
+
+                    <span>●</span>
+                    <span>●</span>
+                    <span>●</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="code-box">
+
+                <h3>Create a feature branch</h3>
+
+<pre>git switch -c feature/login
+
+git add .
+
+git commit -m "Add login feature"
+
+git push -u origin feature/login</pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- PULL REQUEST -->
+
+        <section id="pull-request" class="section dark-section">
+
+            <div class="section-heading">
+
+                <span>06</span>
+
+                <div>
+                    <small>COLLABORATION</small>
+                    <h2>Pull Request</h2>
+                </div>
+
+            </div>
+
+
+            <div class="pr-grid">
+
+                <div class="pr-card">
+
+                    <span>01</span>
+
+                    <h3>Create Branch</h3>
+
+                    <p>
+                        Create a branch for your feature.
+                    </p>
+
+                </div>
+
+
+                <div class="pr-card">
+
+                    <span>02</span>
+
+                    <h3>Push Changes</h3>
+
+                    <p>
+                        Push your branch to GitHub.
+                    </p>
+
+                </div>
+
+
+                <div class="pr-card">
+
+                    <span>03</span>
+
+                    <h3>Open PR</h3>
+
+                    <p>
+                        Create a Pull Request from
+                        your feature branch to main.
+                    </p>
+
+                </div>
+
+
+                <div class="pr-card">
+
+                    <span>04</span>
+
+                    <h3>Review & Merge</h3>
+
+                    <p>
+                        Review the changes and merge
+                        the Pull Request.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MERGE CONFLICT -->
+
+        <section id="conflict" class="section">
+
+            <div class="section-heading">
+
+                <span>07</span>
+
+                <div>
+                    <small>TROUBLESHOOTING</small>
+                    <h2>Merge Conflict</h2>
+                </div>
+
+            </div>
+
+
+            <div class="warning">
+
+                <h3>⚠️ What is a merge conflict?</h3>
+
+                <p>
+                    A merge conflict occurs when Git cannot
+                    automatically combine changes from different
+                    branches.
+                </p>
+
+            </div>
+
+
+            <div class="conflict-box">
+
+<pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+
+Main branch version
+
+=======
+
+Feature branch version
+
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/login</pre>
+
+            </div>
+
+
+            <div class="resolution">
+
+                <div>
+                    <span>01</span>
+                    <p>Open the conflicted file.</p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <p>Choose the correct changes.</p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <p>Remove conflict markers.</p>
+                </div>
+
+                <div>
+                    <span>04</span>
+                    <p>Run git add and commit.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHEAT SHEET -->
+
+        <section id="cheatsheet" class="section dark-section">
+
+            <div class="section-heading">
+
+                <span>08</span>
+
+                <div>
+                    <small>REFERENCE</small>
+                    <h2>Git Cheat Sheet</h2>
+                </div>
+
+            </div>
+
+
+            <div class="cheatsheet">
+
+                <div>
+                    <code>git init</code>
+                    <span>Initialize repository</span>
+                </div>
+
+                <div>
+                    <code>git clone</code>
+                    <span>Clone repository</span>
+                </div>
+
+                <div>
+                    <code>git status</code>
+                    <span>Check status</span>
+                </div>
+
+                <div>
+                    <code>git add .</code>
+                    <span>Stage changes</span>
+                </div>
+
+                <div>
+                    <code>git commit</code>
+                    <span>Create commit</span>
+                </div>
+
+                <div>
+                    <code>git log</code>
+                    <span>View history</span>
+                </div>
+
+                <div>
+                    <code>git branch</code>
+                    <span>Manage branches</span>
+                </div>
+
+                <div>
+                    <code>git switch</code>
+                    <span>Switch branch</span>
+                </div>
+
+                <div>
+                    <code>git merge</code>
+                    <span>Merge branches</span>
+                </div>
+
+                <div>
+                    <code>git push</code>
+                    <span>Upload changes</span>
+                </div>
+
+                <div>
+                    <code>git pull</code>
+                    <span>Download changes</span>
+                </div>
+
+                <div>
+                    <code>git fetch</code>
+                    <span>Fetch remote changes</span>
+                </div>
+
+                <div>
+                    <code>git stash</code>
+                    <span>Temporarily save changes</span>
+                </div>
+
+                <div>
+                    <code>git revert</code>
+                    <span>Reverse a commit</span>
+                </div>
+
+                <div>
+                    <code>git reset</code>
+                    <span>Move HEAD</span>
+                </div>
+
+                <div>
+                    <code>git cherry-pick</code>
+                    <span>Apply a specific commit</span>
+                </div>
+
+                <div>
+                    <code>git tag</code>
+                    <span>Create release tag</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <div>
+                <h3>◆ GitLearn</h3>
+
+                <p>
+                    Practical Git & GitHub learning website.
+                </p>
+            </div>
+
+            <p>
+                Learn • Practice • Commit • Push • Merge
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
